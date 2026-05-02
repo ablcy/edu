@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试卷资源库 - 免费试卷下载平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>试卷资源库</h1>
+            </div>
+            <p class="tagline">免费试卷下载 · 含答案解析 · Word格式</p>
+        </div>
+    </header>
+
+    <!-- 搜索区域 -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="搜索试卷、科目或网站...">
+            </div>
+        </div>
+    </section>
+
+    <!-- 筛选区域 -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-group">
+                <label><i class="fas fa-layer-group"></i> 年级筛选</label>
+                <div class="filter-options" id="gradeFilter">
+                    <button class="filter-btn active" data-grade="all">全部</button>
+                    <button class="filter-btn" data-grade="一年级">一年级</button>
+                    <button class="filter-btn" data-grade="二年级">二年级</button>
+                    <button class="filter-btn" data-grade="三年级">三年级</button>
+                    <button class="filter-btn" data-grade="四年级">四年级</button>
+                    <button class="filter-btn" data-grade="五年级">五年级</button>
+                    <button class="filter-btn" data-grade="六年级">六年级</button>
+                    <button class="filter-btn" data-grade="初一">初一</button>
+                    <button class="filter-btn" data-grade="初二">初二</button>
+                    <button class="filter-btn" data-grade="初三">初三</button>
+                    <button class="filter-btn" data-grade="高一">高一</button>
+                    <button class="filter-btn" data-grade="高二">高二</button>
+                    <button class="filter-btn" data-grade="高三">高三</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label><i class="fas fa-book"></i> 科目筛选</label>
+                <div class="filter-options" id="subjectFilter">
+                    <button class="filter-btn active" data-subject="all">全部</button>
+                    <button class="filter-btn" data-subject="语文">语文</button>
+                    <button class="filter-btn" data-subject="数学">数学</button>
+                    <button class="filter-btn" data-subject="英语">英语</button>
+                    <button class="filter-btn" data-subject="物理">物理</button>
+                    <button class="filter-btn" data-subject="化学">化学</button>
+                    <button class="filter-btn" data-subject="生物">生物</button>
+                    <button class="filter-btn" data-subject="历史">历史</button>
+                    <button class="filter-btn" data-subject="地理">地理</button>
+                    <button class="filter-btn" data-subject="政治">政治</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label><i class="fas fa-file-word"></i> 格式筛选</label>
+                <div class="filter-options" id="formatFilter">
+                    <button class="filter-btn active" data-format="all">全部</button>
+                    <button class="filter-btn" data-format="Word">Word</button>
+                    <button class="filter-btn" data-format="PDF">PDF</button>
+                    <button class="filter-btn" data-format="两者都有">两者都有</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计信息 -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-globe"></i>
+                    <span id="totalSites">0</span>
+                    <p>资源网站</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span id="totalPapers">0</span>
+                    <p>试卷资源</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-download"></i>
+                    <span>免费</span>
+                    <p>全部免费</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资源列表 -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-list"></i> 试卷资源网站</h2>
+                <p>以下网站均提供免费试卷下载，点击即可访问</p>
+            </div>
+            <div class="resources-grid" id="resourcesGrid">
+                <!-- 动态加载资源卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用说明 -->
+    <section class="guide-section">
+        <div class="container">
+            <h2><i class="fas fa-question-circle"></i> 使用说明</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">1</div>
+                    <h3>选择年级科目</h3>
+                    <p>使用上方筛选按钮，选择您需要的年级和科目</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">2</div>
+                    <h3>浏览资源网站</h3>
+                    <p>查看筛选后的资源网站列表，了解各网站特点</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">3</div>
+                    <h3>访问下载</h3>
+                    <p>点击"访问网站"按钮，跳转到对应网站下载试卷</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">4</div>
+                    <h3>获取答案</h3>
+                    <p>大部分网站提供试卷的同时也提供答案解析</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>试卷资源库 &copy; 2026 | 收集整理各类免费教育试卷资源</p>
+            <p class="footer-note">本网站仅提供资源导航服务，试卷资源来源于各教育网站</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
